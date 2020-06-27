@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    main {
+        padding: 1rem;
+    }
+    .main-header {
+        width: 100%;
+        height: 56px;
+        background-color: red;
+        padding: 0 1.5rem;
+    }
+    .main-header_nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .main-header_item-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        
+    }
+    .main-header_item{
+        list-style: none;
+        margin: 0 1rem;
+        padding: 0;
+    }
+    .main-header_item a {
+        text-decoration: none;
+        color: white;
+    }
+    .main-header_item a:hover,
+    .main-header_item a:active,
+    .main-header_item a:active {
+        color: blue;
+    }
+</style>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-header_nav">
+        <ul class="main-header_item-list">
+            <li class="main-header_item"><a href="/login">Login</a></li>
+            <li class="main-header_item"><a href="/signup">Sign Up</a></li>
+            <li class="main-header_item"><a href="template">Home</a></li>
+        </ul>
+    </nav>
+  </header>
+  <br><br><br>
+  <div class="container"> <!-- this needs fixed -->
+    <form action="/p05/addUser" method="POST">
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="text" name="password" id="password">  
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <br><br><br><br><br>
+    <form action="/p05/p05-login" method="GET">
+      <button>Login Here</button>
+    </form>
+</div>
+</body>
+</html>
