@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/login-controller');
+const loginController = require('../controllers/login-controller');
+const movieController = require('../controllers/movie-controller');
 
 router.get('/', (req, res, next) => {
     res.render('template', {
@@ -9,11 +10,19 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/login', controller.login);
+router.get('/login', loginController.login);
 
-router.get('/signup', controller.signUp);
+router.get('/signup', loginController.signUp);
 
-router.get('/template', controller.home);
+router.get('/template', loginController.home);
+
+router.get('/addMoviePage', movieController.addMoviePage)
+
+router.post('/addUser', loginController.addUser);
+
+router.post('/postLogin', loginController.postLogin);
+
+router.post('/addMovie', movieController.addMovie);
 
 
 

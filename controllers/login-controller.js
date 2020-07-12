@@ -1,5 +1,5 @@
 const User = require('../data/user');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 exports.setCookie = (req, res, next) => {
     res.setHeader('Set-Cookie', 'style=true');
@@ -53,20 +53,25 @@ exports.postLogin = (req,res,next) => {
     User.findOne({email: email})
         .then(user => {
             if(!user){
+                console.log("user not found");
                 console.log(email);
-                return res.redirect('/p05/p05-login');
+                return res.redirect('/signup');
             }
+            // console.log("password: " + password + ", userpassword: " + user.password);
+            console.log("before bcrypt");
             bcrypt.compare(password, user.password)
             .then(result => {
                 if(result){
-                    req.session.isLoggedIn = true;
-                    req.session.email = email;
-                    return res.redirect('/p04');
+                    console.log("login true");
+                    // req.session.isLoggedIn = true;
+                    // req.session.email = email;
+                    res.redirect('/');
                 }
             })
             .catch(err => {
+                console.log("invalid");
                 console.log(err);
-                res.redirect('/p05/p05-login');
+                res.redirect('/error');
             })
             
         })
@@ -80,7 +85,7 @@ exports.addUser = (req, res, next) => {
     User.findOne({email: email})
     .then(userDoc => {
         if(userDoc){
-            return res.redirect('/p05/p05-signup');
+            return res.redirect('/login');
         }
         return bcrypt
         .hash(password, 12)
@@ -93,9 +98,9 @@ exports.addUser = (req, res, next) => {
             return user.save();
         })
         .then(result => {
-            req.session.isLoggedIn = true;
-            req.session.email = email;
-            res.redirect('/p05');
+            // req.session.isLoggedIn = true;
+            // req.session.email = email;
+            res.redirect('/');
         })
     })
     .catch(err => {
