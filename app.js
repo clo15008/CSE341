@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose');
 // const session = require('express-session');
 const app = express();
@@ -28,11 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 // server.listen(5000);
 
 // MongoDB
-// const corsOptions = {
-//     origin: "https://fathomless-bayou-13924.herokuapp.com/",
-//     optionsSuccessStatus: 200
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin: "https://CSEProject.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 
 // const options = {
