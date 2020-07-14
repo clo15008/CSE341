@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // MongoDB
 const corsOptions = {
-    origin: "https://CSEProject.herokuapp.com/",
+    origin: "https://CSE341Project.herokuapp.com/",
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
