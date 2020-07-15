@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Details</title>
     <style>
         body {
             padding: 0;
@@ -49,28 +49,27 @@
             justify-content: center;
             text-align: center;
         }
-        .welcome {
-            justify-content: center;
-            text-align: center;
-        }
     </style>
 </head>
-<div class="title">
-    <h1><%= title %></h1>
-</div>
+
 <body>
     <header class="main-header">
         <nav class="main-header_nav">
             <ul class="main-header_item-list">
                 <li class="main-header_item"><a href="template">Home</a></li>
-                <li class="main-header_item"><a href="addMoviePage">Add Movie</a></li>
+                <li class="main-header_item"><a href="addMoviePage">Add Move</a></li>
                 <li class="main-header_item"><a href="movies">Movies</a></li>
             </ul>
         </nav>
     </header>
-    <p class="welcome"><br>
-        Welcome. Please share movies you enjoy.
-    </p>
+    <main class="centered">
+        <h1><%= movie.title %></h1>
+        <hr>
+        <div>
+            <img src="" alt="">
+        </div>
+        <p><%= movie.description %></p>
+    </main>
     
 </body>
 </html>

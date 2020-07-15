@@ -45,8 +45,19 @@
             .main-header_item a:active {
                 color: blue;
             }
+            .title {
+                justify-content: center;
+                text-align: center;
+            }
+            .movieForm {
+                justify-content: center;
+                text-align: center;
+            }
         </style>
     </head>
+<div class="title">
+    <h1><%= title %></h1>
+</div>
 <body>
 <div>
     <header class="main-header">
@@ -54,20 +65,25 @@
             <ul class="main-header_item-list">
                 <li class="main-header_item"><a href="template">Home</a></li>
                 <li class="main-header_item"><a href="addMoviePage">Add Move</a></li>
+                <li class="main-header_item"><a href="movies">Movies</a></li>
             </ul>
         </nav>
     </header>
-    <h1><%= title %></h1>
+    <br><br><br>
   <form action="/addMovie" method="post">
-    <div>
+    <div class="movieForm">
       <label for="title">Movie Title</label>
       <input type="text" name="title" id="title">
     </div>
-    <div>
+    <div class="movieForm">
       <label for="description">Description</label>
       <input type="text" name="description" id="description">
     </div>
-    <button type="submit">Submit</button>
+    <br><br>
+    <div class="movieForm">
+        <button type="submit">Submit</button>
+    </div>
+    
   </form>
 </div>
 <!-- Insert product -->

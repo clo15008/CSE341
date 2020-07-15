@@ -28,3 +28,27 @@ exports.addMovie = (req, res, next) => {
            console.log(err);
        })
 }
+
+exports.getMovies = (req, res, next) => {
+    // console.log('here');
+    Movie.find()
+    .then(movies => {
+        // console.log(movies);
+        // if(!req.session.isLoggedIn){
+        //     res.redirect('/template');
+        // }
+        res.render('movies.ejs', {
+            data: movies,
+            title: 'Movies',
+            path: 'views/movies'
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+
+exports.movieDetail = (req, res, next) => {
+    const movieTitle = req.params.movieId;
+    // Movie.findById
+}

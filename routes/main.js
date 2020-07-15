@@ -24,6 +24,10 @@ router.post('/postLogin', loginController.postLogin);
 
 router.post('/addMovie', movieController.addMovie);
 
+router.get('/movies', movieController.getMovies);
+
+
+
 
 
 // router.post('/insert', (req, res, next) => {

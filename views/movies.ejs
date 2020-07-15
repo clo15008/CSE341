@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .block-info{
+      border-style: ridge;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    main {
+        padding: 1rem;
+    }
+    .main-header {
+        width: 100%;
+        height: 56px;
+        background-color: red;
+        padding: 0 1.5rem;
+    }
+    .main-header_nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .main-header_item-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        
+    }
+    .main-header_item{
+        list-style: none;
+        margin: 0 1rem;
+        padding: 0;
+    }
+    .main-header_item a {
+        text-decoration: none;
+        color: white;
+    }
+    .main-header_item a:hover,
+    .main-header_item a:active,
+    .main-header_item a:active {
+        color: blue;
+    }
+    .title {
+        justify-content: center;
+        text-align: center;
+    }
+  </style>
+</head>
+<div class="title">
+  <h1><%= title %></h1>
+</div>
+<body>
+    <header class="main-header">
+        <nav class="main-header_nav">
+            <ul class="main-header_item-list">
+                <li class="main-header_item"><a href="template">Home</a></li>
+                <li class="main-header_item"><a href="addMoviePage">Add Move</a></li>
+                <li class="main-header_item"><a href="movies">Movies</a></li>
+            </ul>
+        </nav>
+    </header>
+<br><br><br>
+<div class="container">
+  <% for(var i=0; i<data.length; i++) {%>
+    <% if(i % 3 == 0) { %>
+      <div class="info-collection">
+    <% } %>
+          <div class="block-info" onload="onclick('<%= data[i].title%>')">
+            <div id="info-body">
+                <p>Name: <%= data[i].title %></p>
+                <p class="Description">Description: <%= data[i].description %></p>
+            </div>
+          </div>
+    <% if(i % 3 == 2) { %> 
+      </div> 
+      <br>
+    <% } %>
+  <% } %>
+</div>
+<br>
+</body>
+<script>
+</script>
+</html>
