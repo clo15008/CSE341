@@ -43,9 +43,8 @@ app.use(cors(corsOptions));
 //     family: 4
 // };
 
-// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://user1:Fiji2014@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect('mongodb+srv://user1:Fiji2014@cluster0-7dvhb.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('')
 .then(result => {
   console.log(`Listening on ${ 5000 }`); // This should be your user handling code implement following the course videos
   app.listen(5000);
